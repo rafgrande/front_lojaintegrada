@@ -2,9 +2,11 @@ export default {
     colors: {
         primary: '#DCDCDC',
         secondary: '#FFF',
-        tertiary: '#F5F5F5',
-
+        tertiary: '#f2f2f2',
+        black: '#333',
         gray: '#BFBFBF',
+        purple: '#b721ff',
         warning: '#E44C4E'
+        
     }
 }
