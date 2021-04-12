@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Container } from './styles'
+
 const Sigin: React.FC = () => {
     return (
-        <div>Login</div>
+        <Container>
+            <div>Login</div>
+        </Container>
     )
 }
 
