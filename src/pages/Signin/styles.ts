@@ -14,6 +14,7 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin: 20px;
     background-color: ${props => props.theme.colors.secondary};
     box-shadow: 0 5px 10px 0 ${props => props.theme.colors.primary};
 `;

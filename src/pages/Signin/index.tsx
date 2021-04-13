@@ -1,15 +1,22 @@
-import React from 'react'
-import Button from '../../Components/Button'
-import Input from '../../Components/Input'
+import React, {useState} from 'react'
+import Button from '../../components/Button'
+import Input from '../../components/Input'
+
+import { useAuth } from '../../context/auth';
 
 import logo from '../../assets/logo.png'
 
 import { Container, Form, FormTitle, ContainerInputs, SignUpLink } from './styles'
 
-const Sigin: React.FC = () => {
+const SignIn: React.FC = () => {
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    const { signIn } = useAuth();
+
     return (
         <Container>
-            <Form onSubmit={() => {}}>
+            <Form onSubmit={() => signIn(email, password)}>
                 <img src={logo} alt="Loja integrada"/>
                 <FormTitle>Acessar conta</FormTitle>
                     <ContainerInputs>
@@ -17,11 +24,13 @@ const Sigin: React.FC = () => {
                             type="email"
                             required
                             placeholder="E-mail"
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <Input
                             type="password"
                             required
                             placeholder="Senha"
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </ContainerInputs>
                     <Button type="submit">Acessar</Button>
@@ -33,4 +42,4 @@ const Sigin: React.FC = () => {
     )
 }
 
-export default Sigin;
+export default SignIn;
