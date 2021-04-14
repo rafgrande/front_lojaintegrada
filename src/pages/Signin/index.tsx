@@ -9,6 +9,7 @@ import { useAuth } from '../../context/auth';
 
 import { Container, Form, FormTitle, ContainerInputs, SignUpLink, MensageError, Loading } from './styles'
 import { useMutation , gql } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const CREATE_SESSION = gql`
     mutation CreateSession($email: String!, $password: String! ) {
@@ -79,7 +80,7 @@ const SignIn: React.FC = () => {
                     )}
                 </Button>
                 <SignUpLink>
-                    Ainda não é cadastrado? Cadastre aqui
+                    Ainda não é cadastrado? <Link to="/signup">Cadastre aqui</Link>.
                 </SignUpLink>
             </Form>
         </Container>

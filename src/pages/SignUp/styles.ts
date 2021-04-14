@@ -21,6 +21,26 @@ export const Form = styled.form`
     box-shadow: 0 5px 10px 0 ${props => props.theme.colors.primary};
 `;
 
+export const BoxWelcome = styled.div`
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    margin: 20px;
+    background-color: ${props => props.theme.colors.secondary};
+    box-shadow: 0 5px 10px 0 ${props => props.theme.colors.primary};
+    justify-content: space-between;
+`;
+
+export const TitleBoxWelcome = styled.div`
+    font-size: 22px;
+    font-weight: 700;
+`;
+
 export const FormTitle = styled.div`
     font-size: 20px;
     color: ${props => props.theme.colors.black};
