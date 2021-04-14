@@ -2,9 +2,11 @@ import React, { createContext, useState, useContext } from 'react';
 
 interface IAuthContext {
     logged: boolean;
-    signIn(email: string, password: string): void;
+    signIn(): void;
     signOut(): void;
 }
+
+
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
@@ -15,17 +17,13 @@ const AuthProvider: React.FC = ({ children }) => {
         return !!isLogged;
     });
 
-    const signIn = (email: string, password: string) => {
-       
-       if(email === 'rafael@grande.com' && password === '123'){
-            localStorage.setItem('@li:logged', 'true');
-            setLogged(true);
-        } else {
-            alert('login errado');
-        }
+    const signIn = () => {
+        localStorage.setItem('@li:logged', 'true');
+        setLogged(true);
     };
 
     const signOut = () => {
+        localStorage.removeItem('@li:logged');
         setLogged(false);
     }
 

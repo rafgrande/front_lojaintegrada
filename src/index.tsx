@@ -4,15 +4,26 @@ import App from './App';
 
 import { ThemeProvider } from 'styled-components';
 import { AuthProvider } from './context/auth';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
 
 import Theme from './styles/Theme'
 
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+  cache: new InMemoryCache(),
+  defaultOptions: {
+    mutate: { errorPolicy: 'ignore' },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-  <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme}>
       <AuthProvider>
-        <App />
+        <ApolloProvider client={client}>
+            <App />
+        </ApolloProvider>
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
