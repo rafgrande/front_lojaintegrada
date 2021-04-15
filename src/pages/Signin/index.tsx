@@ -66,6 +66,7 @@ const SignIn: React.FC = () => {
                     />
                     <Label htmlFor="password">Senha:</Label>
                     <Input
+                        type="password"
                         id="password"
                         aria-label="password"
                         aria-required="true"
