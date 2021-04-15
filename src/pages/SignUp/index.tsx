@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
+import Label from '../../components/Label'
 
 import logo from '../../assets/logo.png'
 import { AiOutlineLoading } from 'react-icons/ai';
-
-import { useAuth } from '../../context/auth';
 
 import { Container, Form, BoxWelcome, TitleBoxWelcome, FormTitle, ContainerInputs, SignUpLink, MensageError, Loading } from './styles'
 import { useMutation , gql } from '@apollo/client';
@@ -65,13 +64,18 @@ const SignUp: React.FC = () => {
                 <FormTitle>Acessar conta</FormTitle>
                 {!!mensageError && <MensageError>{mensageError}</MensageError>}
                 <ContainerInputs>
+                    <Label htmlFor="email">Email:</Label> 
                     <Input
+                        id="email"
                         type="text"
                         required
                         placeholder="Nome"
                         onChange={(e) => setName(e.target.value)}
                     />
+                    <Label htmlFor="password">Senha:</Label>
                     <Input
+                        id="password"
+                        aria-required="true"
                         type="email"
                         required
                         placeholder="E-mail"

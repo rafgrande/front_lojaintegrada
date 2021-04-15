@@ -59,6 +59,10 @@ export const Loading = styled.div`
 
 export const ContainerInputs = styled.div`
     margin: 20px 0 50px;
+
+    > input {
+        margin-bottom: 20px;
+    }
 `;
 
 export const SignUpLink = styled.div`
