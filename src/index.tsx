@@ -9,7 +9,7 @@ import { ApolloProvider } from '@apollo/client/react';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-import Theme from './styles/Theme';
+import { defaultTheme } from './styles/Theme';
 
 const client = new ApolloClient({
   uri: 'https://apili.herokuapp.com/graphql',
@@ -21,7 +21,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={defaultTheme}>
       <AuthProvider>
         <ApolloProvider client={client}>
             <App />
