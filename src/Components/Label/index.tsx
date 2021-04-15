@@ -8,10 +8,10 @@ const Container = styled.label`
 
 type IInputProps = LabelHTMLAttributes<HTMLLabelElement>
 
-const Input: React.FC<IInputProps> = ({ ...rest }) => {
+const Label: React.FC<IInputProps> = ({ ...rest }) => {
     return (
         <Container {...rest}/>
     )
 }
 
-export default Input;
+export default Label;

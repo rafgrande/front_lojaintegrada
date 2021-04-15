@@ -8,7 +8,6 @@ import { AiOutlineLoading } from 'react-icons/ai';
 
 import { Container, Form, BoxWelcome, TitleBoxWelcome, FormTitle, ContainerInputs, SignUpLink, MensageError, Loading } from './styles'
 import { useMutation , gql } from '@apollo/client';
-import { Link } from 'react-router-dom';
 
 const CREATE_USER = gql`
     mutation createUser($name: String!, $email: String!, $password: String! ) {
@@ -45,7 +44,7 @@ const SignUp: React.FC = () => {
                     <TitleBoxWelcome>
                         Bem vindo
                     </TitleBoxWelcome>
-                    <Button>Voltar</Button>
+                    <a href="/">Voltar</a>
                 </BoxWelcome>
                      
             </Container>
@@ -64,27 +63,27 @@ const SignUp: React.FC = () => {
                 <FormTitle>Acessar conta</FormTitle>
                 {!!mensageError && <MensageError>{mensageError}</MensageError>}
                 <ContainerInputs>
-                    <Label htmlFor="email">Email:</Label> 
+                    <Label htmlFor="name">Nome:</Label> 
                     <Input
-                        id="email"
+                        id="name"
                         type="text"
                         required
-                        placeholder="Nome"
                         onChange={(e) => setName(e.target.value)}
                     />
-                    <Label htmlFor="password">Senha:</Label>
+                    <Label htmlFor="email">Email:</Label>
                     <Input
-                        id="password"
+                        id="email"
                         aria-required="true"
                         type="email"
                         required
-                        placeholder="E-mail"
                         onChange={(e) => setEmail(e.target.value)}
                     />
+                    <Label htmlFor="password">Senha:</Label>
                     <Input
                         type="password"
+                        id="password"
+                        aria-required="true"
                         required
-                        placeholder="Senha"
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </ContainerInputs>
