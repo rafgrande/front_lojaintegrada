@@ -8,6 +8,7 @@ import { AiOutlineLoading } from 'react-icons/ai';
 
 import { Container, Form, BoxWelcome, TitleBoxWelcome, FormTitle, ContainerInputs, SignUpLink, MensageError, Loading } from './styles'
 import { useMutation , gql } from '@apollo/client';
+import { Link } from 'react-router-dom'
 
 const CREATE_USER = gql`
     mutation createUser($name: String!, $email: String!, $password: String! ) {
