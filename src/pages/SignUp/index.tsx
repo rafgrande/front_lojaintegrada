@@ -43,7 +43,7 @@ const SignUp: React.FC = () => {
             <Container>
                 <BoxWelcome>
                     <TitleBoxWelcome>
-                        Bem vindo
+                        Parabéns, usuário cadastrado!
                     </TitleBoxWelcome>
                     <a href="/">Voltar</a>
                 </BoxWelcome>
