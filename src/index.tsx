@@ -12,7 +12,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import Theme from './styles/Theme';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://apili.herokuapp.com/graphql',
   cache: new InMemoryCache(),
   defaultOptions: {
     mutate: { errorPolicy: 'ignore' },
