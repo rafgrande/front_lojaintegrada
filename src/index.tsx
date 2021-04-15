@@ -7,7 +7,9 @@ import { AuthProvider } from './context/auth';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
 
-import Theme from './styles/Theme'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+import Theme from './styles/Theme';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -29,3 +31,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+serviceWorkerRegistration.register();
