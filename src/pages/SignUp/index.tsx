@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Button from '../../components/Button'
-import Input from '../../components/Input'
+import Input from '../../Components/Input'
 import Label from '../../components/Label'
 
 import logo from '../../assets/logo.png'
